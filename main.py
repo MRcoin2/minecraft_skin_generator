@@ -6,9 +6,8 @@ import streamlit as st
 import skin_maker
 import skin_render
 from PIL import Image
-import stripe
+
 from bokeh.models.widgets import Div
-stripe.api_key = "pk_test_51LeOGjF2pzSp6Fy9bYCpbT2hKgewpq3ewtOZtlxmUxOFDk7rKUaYseUKVyupt4wVsvEv3k5r2pxeuYZOJslnbgHU00WVKS68Jq"
 import streamlit.components.v1 as components
 
 # embed streamlit docs in a streamlit app
