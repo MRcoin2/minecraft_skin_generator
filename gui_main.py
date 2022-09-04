@@ -61,5 +61,3 @@ while True:
 
 window.close()
 os.system('exit')
-
-# zcacheować perspektywy skina do podglądu
