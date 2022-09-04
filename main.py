@@ -6,6 +6,13 @@ import streamlit as st
 import skin_maker
 import skin_render
 from PIL import Image
+import stripe
+from bokeh.models.widgets import Div
+stripe.api_key = "pk_test_51LeOGjF2pzSp6Fy9bYCpbT2hKgewpq3ewtOZtlxmUxOFDk7rKUaYseUKVyupt4wVsvEv3k5r2pxeuYZOJslnbgHU00WVKS68Jq"
+import streamlit.components.v1 as components
+
+# embed streamlit docs in a streamlit app
+
 
 
 
@@ -45,6 +52,8 @@ with col2:
             skin = skin_maker.make_skin(image)
             preview_gif = skin_render.create_preview(skin)
             st.image(preview_gif)
+            # test = st.image('preview.apng')
+            # asyncio.run(preview_updater(test))
             generate_preview = not generate_preview
 col3, col4, col5 = st.columns([1,1,4])
 with col3:
@@ -56,4 +65,9 @@ with col3:
         st.button('Download', disabled=True)
 with col4:
     if st.button('Donate ❤',key='balls'):
-        st.markdown('<meta http-equiv="refresh" content="0;url=https://donate.stripe.com/test_4gw3cqcdCfoEa9W9AA">',unsafe_allow_html=True)
+        # st.markdown('<meta http-equiv="refresh" content="0;url=https://donate.stripe.com/test_4gw3cqcdCfoEa9W9AA">',unsafe_allow_html=True)
+        js = "window.open('https://donate.stripe.com/test_4gw3cqcdCfoEa9W9AA')"  # New tab or window
+        # js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
