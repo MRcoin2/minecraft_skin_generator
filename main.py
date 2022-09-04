@@ -8,7 +8,6 @@ import skin_render
 from PIL import Image
 
 from bokeh.models.widgets import Div
-import streamlit.components.v1 as components
 
 # embed streamlit docs in a streamlit app
 
