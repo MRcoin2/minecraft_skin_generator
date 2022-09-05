@@ -2,5 +2,5 @@ colorthief==0.2.1
 MinePI==0.4.2
 Pillow==9.2.0
 bokeh
-streamlit-image-crop
+streamlit
 click==8.1.3
