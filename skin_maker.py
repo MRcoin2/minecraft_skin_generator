@@ -6,7 +6,7 @@ from PIL import Image
 from colorthief import ColorThief
 
 
-def make_skin(path):
+def make_skin(path, custom_fill_color):
     img = Image.open(path).convert("RGBA")
     # img.show()
     # img = img.convert("RGBA")
@@ -51,7 +51,10 @@ def make_skin(path):
     # skin.putalpha(255)
     color_thief = ColorThief(path)
     # color0, color1 = color_finder.color_check()
-    color0 = color_thief.get_color()
+    if custom_fill_color is not None:
+        color0 = tuple(int(custom_fill_color.strip('#')[i:i+2], 16) for i in (0, 2, 4))
+    else:
+        color0 = color_thief.get_color()
     # r0,g0,b0 = color0[0]
     # r1,g1,b1 = color1[0]
     r0, g0, b0 = color0
