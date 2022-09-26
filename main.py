@@ -49,7 +49,7 @@ with col2:
         skin = skin_maker.make_skin(image, custom_fill_color)
         preview_gif = skin_render.create_preview(skin)
         st.image(preview_gif)
-        # st.markdown(f'<img src="data:image/gif;base64,{base64.b64encode(preview_gif.read()).decode("utf-8-sig")}">',unsafe_allow_html = True)
+        st.markdown(f'<img src="data:image/gif;base64,{base64.b64encode(preview_gif.read()).decode("utf-8-sig")}">',unsafe_allow_html = True)
 col3, col4, col5 = st.columns([1,1,4])
 with col3:
     if skin is not None:
