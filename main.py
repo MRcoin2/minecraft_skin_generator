@@ -1,4 +1,3 @@
-import asyncio
 import base64
 from io import BytesIO
 
@@ -11,7 +10,7 @@ from PIL import Image
 from bokeh.models.widgets import Div
 
 st.set_page_config(
-    page_title="Minecraft Skin App", page_icon=Image.open('icon.png'), initial_sidebar_state="expanded"
+    page_title="Minecraft Skin App", page_icon=Image.open('icon.png')
 )
 
 st.write(
